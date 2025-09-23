@@ -15,7 +15,7 @@ analyzeBtn.addEventListener("click", async () => {
   resultDiv.innerHTML = "<p style='color:#ffa500;font-weight:bold'>Analyzing...</p>";
 
   try {
-    const response = await fetch("http://127.0.0.1:5000/analyze", {
+    const response = await fetch("https://phishviz.onrender.com/analyze", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email })
