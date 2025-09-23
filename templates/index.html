@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PHISHVIZ</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+
+
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="hero">
+      <h1 class="logo">PHISHVIZ</h1>
+      <p class="subtitle">Detect phishing emails before they hit your inbox – Stay ahead of cyber threats</p>
+      <button id="analyzeBtn">Analyze Email Now</button>
+      <canvas id="particles"></canvas>
+    </div>
+
+    <div class="container">
+      <textarea id="emailInput" rows="8" placeholder="Paste email here..."></textarea>
+      <div id="result"></div>
+      <div id="graph"></div>
+    </div>
+  </main>
+</div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
