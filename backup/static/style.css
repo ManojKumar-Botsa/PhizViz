@@ -1,0 +1,310 @@
+/* ===== GLOBAL =====
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: #0a0f1f;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 40px 20px 60px;
+  background: linear-gradient(135deg, #001f3f, #004080);
+  border-radius: 0 0 40px 40px;
+  overflow: hidden;
+}
+
+.logo {
+  font-size: 4em;
+  font-weight: bold;/* ===== GLOBAL ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: #0a0f1f;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 40px 20px 60px;
+  background: linear-gradient(135deg, #001f3f, #004080);
+  border-radius: 0 0 40px 40px;
+  overflow: hidden;
+}
+
+.logo {
+  font-size: 4em;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 15px #ffa500, 0 0 30px #ff7f50;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ffa500; }
+  to   { text-shadow: 0 0 30px #ff7f50; }
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: #ffa500;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* ===== ANALYZE BUTTON ===== */
+#analyzeBtn {
+  margin-top: 25px;
+  background: linear-gradient(90deg, #ffa500, #ff7f50);
+  color: #fff;
+  border: none;
+  padding: 14px 45px;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 15px rgba(255,165,0,0.6);
+  animation: pulse 2s infinite;
+  position: relative;
+  z-index: 1;
+}
+
+#analyzeBtn:hover {
+  transform: scale(1.05);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px #ffa500; }
+  50% { box-shadow: 0 0 25px #ff7f50; }
+  100% { box-shadow: 0 0 10px #ffa500; }
+}
+
+/* ===== PARTICLES ===== */
+#particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* ===== TEXTAREA ===== */
+#emailInput {
+  width: 100%;
+  padding: 15px;
+  font-size: 1em;
+  border-radius: 10px;
+  border: none;
+  resize: none;
+  background: #f0f8ff;
+  color: #001f3f;
+  outline: none;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+}
+
+#emailInput::placeholder {
+  color: #555;
+}
+
+/* ===== RESULT BOX ===== */
+#result {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 10px;
+  background: #e6f0ff;
+  color: #001f3f;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  animation: fadeIn 0.8s ease;
+}
+
+/* ===== VERDICT COLORS ===== */
+.safe {
+  color: #28a745;
+}
+
+.suspicious {
+  color: #ffc107;
+}
+
+.phishing {
+  color: #dc3545;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .logo {
+    font-size: 2.6em;
+  }
+  .subtitle {
+    font-size: 1em;
+  }
+  #analyzeBtn {
+    padding: 12px 30px;
+    font-size: 1em;
+  }
+}
+
+  color: #ffffff;
+  text-shadow: 0 0 15px #ffa500, 0 0 30px #ff7f50;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ffa500; }
+  to   { text-shadow: 0 0 30px #ff7f50; }
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: #ffa500;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* ===== ANALYZE BUTTON ===== */
+#analyzeBtn {
+  margin-top: 25px;
+  background: linear-gradient(90deg, #ffa500, #ff7f50);
+  color: #fff;
+  border: none;
+  padding: 14px 45px;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 15px rgba(255,165,0,0.6);
+  animation: pulse 2s infinite;
+  position: relative;
+  z-index: 1;
+}
+
+#analyzeBtn:hover {
+  transform: scale(1.05);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px #ffa500; }
+  50% { box-shadow: 0 0 25px #ff7f50; }
+  100% { box-shadow: 0 0 10px #ffa500; }
+}
+
+/* ===== PARTICLES ===== */
+#particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* ===== TEXTAREA ===== */
+#emailInput {
+  width: 100%;
+  padding: 15px;
+  font-size: 1em;
+  border-radius: 10px;
+  border: none;
+  resize: none;
+  background: #f0f8ff;
+  color: #001f3f;
+  outline: none;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+}
+
+#emailInput::placeholder {
+  color: #555;
+}
+
+/* ===== RESULT BOX ===== */
+#result {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 10px;
+  background: #e6f0ff;
+  color: #001f3f;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  animation: fadeIn 0.8s ease;
+}
+
+/* ===== VERDICT COLORS ===== */
+.safe {
+  color: #28a745;
+}
+
+.suspicious {
+  color: #ffc107;
+}
+
+.phishing {
+  color: #dc3545;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .logo {
+    font-size: 2.6em;
+  }
+  .subtitle {
+    font-size: 1em;
+  }
+  #analyzeBtn {
+    padding: 12px 30px;
+    font-size: 1em;
+  }
+} */

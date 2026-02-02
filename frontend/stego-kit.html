@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steganography Kit</title>
+  <link rel="stylesheet" href="/frontend/css/style.css">
+  <link rel="stylesheet" href="/frontend/css/buttons.css">
+  <link rel="stylesheet" href="/frontend/css/cards.css">
+  <link rel="stylesheet" href="/frontend/css/background.css">
+  <link rel="icon" href="/frontend/assets/images/logo.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="nav">
+    <div class="nav__inner">
+      <div class="brand">
+        <img src="/frontend/assets/images/logo.jpeg" alt="PhishViz" class="brand__logo">
+        <span class="brand__name">PhishViz</span>
+      </div>
+      <nav class="nav__links">
+        <a href="/frontend/index.html">Home</a>
+        <a href="/frontend/email-scan.html">Email Analyzer</a>
+        <a href="/frontend/link-scan.html">Link Detector</a>
+        <a href="/frontend/document-scan.html">Document Scanner</a>
+        <a href="/frontend/stego-kit.html" class="active">Steganography Kit</a>
+        <a href="/frontend/dashboard.html">Threat Dashboard</a>
+        <a href="/frontend/reports.html">Reports</a>
+      </nav>
+      <a href="/frontend/stego-kit.html" class="btn btn--primary">Get Started</a>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="hero hero--with-bg">
+      <canvas id="particles"></canvas>
+      <div class="hero-visual"></div>
+      <div class="hero__content">
+        <h1 class="hero__title">Steganography <span class="accent">Kit</span></h1>
+        <p class="hero__subtitle">Upload an image to detect potential hidden data signals.</p>
+        <div class="form-stack">
+          <input id="imageInput" class="input file-input stego-input" type="file" accept="image/*" />
+          <div class="form-actions">
+            <button id="analyzeBtn" class="btn btn--secondary" type="button">Scan Image</button>
+          </div>
+          <div id="result" class="result-box"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/frontend/js/stego.js"></script>
+</body>
+</html>

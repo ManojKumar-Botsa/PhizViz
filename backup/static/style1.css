@@ -1,0 +1,187 @@
+/* =========================
+   GLOBAL
+========================= */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: #0b1220;
+  color: #eaeef5;
+  min-height: 100vh;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+.main-content {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 50px 20px 70px;
+  background: linear-gradient(135deg, #0f1c3f, #1b2e6b);
+  border-radius: 0 0 28px 28px;
+  overflow: hidden;
+}
+
+/* =========================
+   LOGO & SUBTITLE
+========================= */
+.logo {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #a9b4ff;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+/* =========================
+   ANALYZE BUTTON
+========================= */
+#analyzeBtn {
+  margin-top: 30px;
+  background: linear-gradient(90deg, #4f6cff, #6a82fb);
+  color: #ffffff;
+  border: none;
+  padding: 14px 42px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  box-shadow: 0 8px 20px rgba(79,108,255,0.35);
+  position: relative;
+  z-index: 1;
+}
+
+#analyzeBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(79,108,255,0.45);
+}
+
+#analyzeBtn:active {
+  transform: translateY(0);
+}
+
+/* =========================
+   PARTICLES
+========================= */
+#particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* =========================
+   EMAIL INPUT
+========================= */
+#emailInput {
+  width: 100%;
+  padding: 16px;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  border: 1px solid #26315f;
+  resize: none;
+  background: #121b33;
+  color: #eaeef5;
+  outline: none;
+  line-height: 1.6;
+  transition: all 0.25s ease;
+}
+
+#emailInput::placeholder {
+  color: #9aa4d6;
+}
+
+#emailInput:focus {
+  border-color: #4f6cff;
+  box-shadow: 0 0 0 3px rgba(79,108,255,0.25);
+  background: #141f3f;
+}
+
+/* =========================
+   RESULT BOX
+========================= */
+#result {
+  margin-top: 24px;
+  padding: 22px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #121b33, #16224a);
+  color: #eaeef5;
+  border: 1px solid #26315f;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+  animation: fadeIn 0.4s ease;
+}
+
+/* =========================
+   VERDICT COLORS
+========================= */
+.safe {
+  color: #4caf50;
+  font-weight: 600;
+}
+
+.suspicious {
+  color: #ffca28;
+  font-weight: 600;
+}
+
+.phishing {
+  color: #ef5350;
+  font-weight: 600;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+  .logo {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  #analyzeBtn {
+    padding: 12px 30px;
+    font-size: 0.95rem;
+  }
+}
