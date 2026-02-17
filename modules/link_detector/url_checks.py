@@ -9,14 +9,38 @@ SHORTENER_DOMAINS = {
 }
 
 SUSPICIOUS_TLDS = {
-    "zip", "mov", "tk", "ml", "ga", "cf", "gq",
-    "xyz", "top", "work", "click", "country", "mom"
+    # Free / Abuse-heavy ccTLDs
+    "tk", "ml", "ga", "cf", "gq",
+    # New gTLDs often used in spam/phishing
+    "zip", "mov", "xyz", "top", "work", "click", "country", "mom",
+    "info", "biz", "link", "review", "site", "live", "space", "online",
+    "store", "download", "win", "bid", "loan", "men", "stream", "trade",
+    "date", "party", "science", "club", "kim", "vip", "pro", "buzz",
+    "sbs", "icu", "cyou", "rest", "fit", "bond", "cam", "ooo"
 }
 
 POPULAR_DOMAINS = {
+    # Tech / Social
     "google.com", "microsoft.com", "apple.com", "github.com",
     "facebook.com", "amazon.com", "paypal.com", "netflix.com",
-    "linkedin.com", "youtube.com", "instagram.com"
+    "linkedin.com", "youtube.com", "instagram.com", "twitter.com",
+    "tiktok.com", "whatsapp.com", "telegram.org", "snapchat.com",
+    "reddit.com", "twitch.tv", "spotify.com", "zoom.us", "slack.com",
+    "adobe.com", "salesforce.com", "dropbox.com", "pinterest.com",
+    
+    # Banking / Finance
+    "chase.com", "bankofamerica.com", "wellsfargo.com", "citi.com",
+    "americanexpress.com", "capitalone.com", "usbank.com", "pnc.com",
+    "stripe.com", "square.com", "intuit.com", "fidelity.com",
+    
+    # Crypto
+    "coinbase.com", "binance.com", "kraken.com", "blockchain.com",
+    "crypto.com", "gemini.com", "opensea.io", "metamask.io",
+    
+    # Shopping / Shipping / Services
+    "ebay.com", "walmart.com", "target.com", "bestbuy.com",
+    "alibaba.com", "aliexpress.com", "fedex.com", "ups.com",
+    "usps.com", "dhl.com", "irs.gov", "ssa.gov", "login.gov"
 }
 
 

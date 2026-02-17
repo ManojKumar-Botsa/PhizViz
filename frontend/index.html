@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +13,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-  
+
 </head>
+
 <body>
   <header class="nav">
     <div class="nav__inner">
@@ -30,7 +32,6 @@
         <a href="/frontend/dashboard.html">Threat Dashboard</a>
         <a href="/frontend/reports.html">Reports</a>
       </nav>
-      <a href="/frontend/email-scan.html" class="btn btn--primary">Get Started</a>
     </div>
   </header>
 
@@ -45,7 +46,7 @@
       </div>
     </section>
 
-    <section class="actions container grid-3">
+    <section class="actions container grid-2">
       <div class="card glass">
         <div class="card__header">Scan a Link</div>
         <div class="card__icon">
@@ -75,6 +76,16 @@
         <p class="card__desc">Detect macros, embedded links and hidden threats.</p>
         <a href="/frontend/document-scan.html" class="btn btn--success">Upload File</a>
       </div>
+
+      <div class="card glass">
+        <div class="card__header">Steganography Kit</div>
+        <div class="card__icon">
+          <img class="card__art" src="/frontend/assets/images/lock.jpeg" alt="Steganography Kit">
+        </div>
+        <h3 class="card__title sr-only">Steganography Kit</h3>
+        <p class="card__desc">Detect hidden data and signals in images.</p>
+        <a href="/frontend/stego-kit.html" class="btn btn--secondary">Scan Image</a>
+      </div>
     </section>
 
     <p class="tagline">Think Before You Click. Stay Secure.</p>
@@ -89,7 +100,9 @@
     </section>
   </main>
 
+  <script src="/frontend/js/animations.js"></script>
   <script src="/frontend/js/main.js"></script>
-  
+
 </body>
+
 </html>

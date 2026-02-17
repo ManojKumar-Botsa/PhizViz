@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +31,6 @@
         <a href="/frontend/dashboard.html">Threat Dashboard</a>
         <a href="/frontend/reports.html">Reports</a>
       </nav>
-      <a href="/frontend/link-scan.html" class="btn btn--primary">Get Started</a>
     </div>
   </header>
 
@@ -42,7 +42,8 @@
         <h1 class="hero__title">Link <span class="accent">Detector</span></h1>
         <p class="hero__subtitle">Check a URL for phishing indicators and risk.</p>
         <div class="form-stack">
-          <textarea id="urlInput" class="input textarea textarea--no-resize url-input" rows="1" placeholder="Paste a URL (https://...)"></textarea>
+          <textarea id="urlInput" class="input textarea textarea--no-resize url-input" rows="1"
+            placeholder="Paste a URL (https://...)"></textarea>
           <div class="form-actions">
             <button id="analyzeBtn" class="btn btn--info" type="button">Scan Link</button>
           </div>
@@ -52,6 +53,8 @@
     </section>
   </main>
 
+  <script src="/frontend/js/animations.js"></script>
   <script src="/frontend/js/link.js"></script>
 </body>
+
 </html>

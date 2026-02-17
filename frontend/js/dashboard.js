@@ -48,13 +48,13 @@ function renderDashboard(data) {
       <div style="font-weight:800; font-size:1.1rem; margin-bottom:10px;">Recent activity</div>
       <div style="display:flex; flex-direction:column; gap:10px;">
         ${items
-          .map((e) => {
-            const t = e.type || "scan";
-            const ts = e.ts || "";
-            const summary = e.summary || "";
-            const riskScore = e.risk && e.risk.score != null ? e.risk.score : "-";
-            const riskLevel = e.risk && e.risk.level ? e.risk.level : "-";
-            return `
+      .map((e) => {
+        const t = e.type || "scan";
+        const ts = e.ts || "";
+        const summary = e.summary || "";
+        const riskScore = e.risk && e.risk.score != null ? e.risk.score : "-";
+        const riskLevel = e.risk && e.risk.level ? e.risk.level : "-";
+        return `
               <div style="padding:12px; border-radius:12px; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.03);">
                 <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
                   <div><b>${escapeHtml(t)}</b> — ${escapeHtml(summary)}</div>
@@ -63,8 +63,8 @@ function renderDashboard(data) {
                 <div style="margin-top:6px;"><b>Risk:</b> ${escapeHtml(riskScore)} / 100 (<b>${escapeHtml(riskLevel)}</b>)</div>
               </div>
             `;
-          })
-          .join("")}
+      })
+      .join("")}
       </div>
     </div>
   `;
@@ -73,7 +73,11 @@ function renderDashboard(data) {
 async function loadDashboard() {
   if (!statsDiv || !historyDiv) return;
 
-  statsDiv.innerHTML = `<div id="result"><p style="color:#ffc107;font-weight:700">Loading…</p></div>`;
+  statsDiv.innerHTML = `
+    <div class="scanner-loader">
+      <div class="scanner-ring"></div>
+      <div class="scanner-text">Loading Dashboard...</div>
+    </div>`;
   historyDiv.innerHTML = "";
 
   try {
@@ -91,37 +95,3 @@ async function loadDashboard() {
 
 loadDashboard();
 
-const canvas = document.getElementById("particles");
-if (canvas) {
-  const ctx = canvas.getContext("2d");
-  const setSize = () => {
-    canvas.width = window.innerWidth;
-    canvas.height = 260;
-  };
-  setSize();
-  window.addEventListener("resize", setSize);
-
-  const particles = Array.from({ length: 60 }, () => ({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    r: Math.random() * 2 + 1,
-    dx: (Math.random() - 0.5) * 0.6,
-    dy: (Math.random() - 0.5) * 0.6
-  }));
-
-  function animateParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => {
-      p.x += p.dx;
-      p.y += p.dy;
-      if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-      if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = "#5aa2ff";
-      ctx.fill();
-    });
-    requestAnimationFrame(animateParticles);
-  }
-  animateParticles();
-}
