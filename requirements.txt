@@ -4,3 +4,5 @@ scikit-learn
 numpy
 urllib3
 gunicorn
+requests
+python-dotenv

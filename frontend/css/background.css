@@ -3,34 +3,37 @@
 body {
   /* Global world map background with dark gradient overlay */
   background:
-    linear-gradient(180deg, rgba(5,10,20,0.45), rgba(5,10,20,0.6)),
+    linear-gradient(180deg, rgba(5, 10, 20, 0.45), rgba(5, 10, 20, 0.6)),
     url('/frontend/assets/images/worldmap.jpeg') no-repeat center center / cover;
   background-attachment: fixed;
   min-height: 100vh;
+  animation: none;
 }
 
 .nav {
-  box-shadow: 0 2px 0 rgba(255,255,255,0.06) inset;
+  box-shadow: 0 2px 0 rgba(255, 255, 255, 0.06) inset;
 }
 
 .hero.hero--with-bg {
   position: relative;
-  min-height: 460px; /* taller hero like the mock */
+  min-height: 460px;
+  /* taller hero like the mock */
   background:
-    linear-gradient(180deg, rgba(10,26,58,0.18), rgba(5,11,26,0.18)),
+    linear-gradient(180deg, rgba(10, 26, 58, 0.18), rgba(5, 11, 26, 0.18)),
     url('/frontend/assets/images/worldmap.jpeg');
   background-size: cover;
   background-position: center;
   overflow: hidden;
+  animation: none;
 }
 
 .hero.hero--with-bg::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(800px 300px at 50% -10%, rgba(120,180,255,0.10), transparent),
-              radial-gradient(900px 260px at 85% 0%, rgba(20,60,160,0.08), transparent),
-              linear-gradient(180deg, rgba(10,16,32,0.0), rgba(10,16,32,0.14));
+  background: radial-gradient(800px 300px at 50% -10%, rgba(120, 180, 255, 0.10), transparent),
+    radial-gradient(900px 260px at 85% 0%, rgba(20, 60, 160, 0.08), transparent),
+    linear-gradient(180deg, rgba(10, 16, 32, 0.0), rgba(10, 16, 32, 0.14));
   pointer-events: none;
 }
 
@@ -47,10 +50,12 @@ body {
 }
 
 .hero__title {
-  text-shadow: 0 2px 0 rgba(0,0,0,0.3);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
 }
 
-.accent { text-shadow: 0 0 10px rgba(90,162,255,0.6); }
+.accent {
+  text-shadow: 0 0 10px rgba(90, 162, 255, 0.6);
+}
 
 .hero__subtitle {
   margin-top: 6px;
@@ -71,4 +76,3 @@ body {
   width: min(28vw, 360px);
   filter: drop-shadow(0 0 40px rgba(0, 255, 255, 0.4));
 }
-

@@ -5,9 +5,10 @@ from datetime import datetime
 # Email ML predictor (loads ml_model.pkl from ROOT internally)
 from modules.email_analyzer.predict import predict_email
 
-# Link detector (rule-based)
+# Link detector (rule-based + real-time reputation)
 from modules.link_detector.url_checks import analyze_url
 from modules.link_detector.verdict import link_verdict
+from modules.link_detector.url_reputation import aggregate_reputation
 
 # Document scanner (detection-only)
 from modules.document_scanner.file_checks import analyze_file_properties
@@ -104,7 +105,8 @@ def analyze_email_legacy():
 def scan_link():
     """
     Accepts JSON: { "url": "http(s)://..." }
-    Returns rule-based indicators, verdict, and risk (link weight = 25%).
+    Returns rule-based indicators, real-time reputation (GSB / VT / PhishTank),
+    verdict, and risk score (link weight = 25%).
     """
     if not request.is_json:
         return json_error("Content-Type must be application/json", 415)
@@ -114,7 +116,26 @@ def scan_link():
     if not url:
         return json_error("Field 'url' is required")
 
+    # Rule-based analysis (always runs, no API key needed)
     indicators = analyze_url(url)
+
+    # Real-time reputation checks (graceful if keys missing)
+    reputation = aggregate_reputation(url)
+
+    # Boost verdict if reputation says malicious
+    if reputation.get("overall") == "malicious":
+        indicators.append({
+            "type": "reputation_malicious",
+            "details": "Flagged by real-time reputation APIs",
+            "severity": "high"
+        })
+    elif reputation.get("overall") == "suspicious":
+        indicators.append({
+            "type": "reputation_suspicious",
+            "details": "Flagged as suspicious by reputation APIs",
+            "severity": "medium"
+        })
+
     verdict = link_verdict(indicators)
     risk = compute_risk(email=None, link=verdict, document=None)
 
@@ -122,13 +143,14 @@ def scan_link():
         entry_type="link",
         summary=url,
         risk=risk,
-        details={"url": url, "verdict": verdict, "indicators": indicators}
+        details={"url": url, "verdict": verdict, "indicators": indicators, "reputation": reputation}
     )
 
     return jsonify({
         "ok": True,
         "url": url,
         "indicators": indicators,
+        "reputation": reputation,
         "verdict": verdict,
         "risk": risk
     })

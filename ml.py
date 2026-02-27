@@ -61,7 +61,7 @@ print(df["label"].value_counts())
 
 # ================= NLP FEATURES =================
 tfidf = TfidfVectorizer(
-    max_features=2000,      # 🔥 reduced to avoid memorization
+    max_features=2000,      #reduced to avoid memorization
     ngram_range=(1, 1),
     stop_words="english",
     sublinear_tf=True
