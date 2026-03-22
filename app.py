@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from datetime import datetime
+import os
 
 # Email ML predictor (loads ml_model.pkl from ROOT internally)
 from modules.email_analyzer.predict import predict_email
@@ -294,4 +295,5 @@ def reports():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, use_reloader=False)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=False)
