@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from datetime import datetime
 import os
@@ -23,7 +23,7 @@ from modules.steganography_kit.metadata_check import extract_metadata_flags
 # Risk engine
 from modules.risk_engine.score import compute_risk
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="frontend", static_url_path="/frontend")
 CORS(app)
 
 
@@ -49,6 +49,11 @@ def _add_history(entry_type: str, summary: str, risk: dict | None, details: dict
 
 def json_error(message: str, status: int = 400):
     return jsonify({"ok": False, "error": message}), status
+
+
+@app.route("/")
+def index():
+    return send_from_directory("frontend", "index.html")
 
 
 @app.route("/analyze-email", methods=["POST"])
